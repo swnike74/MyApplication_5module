@@ -40,20 +40,20 @@
 
         static void Main(string[] args)
         {
-            var (name, age) = ("Евгения", 27);
+            var favcolors = new string[3];
 
-            Console.WriteLine("Мое имя: {0}", name);
-            Console.WriteLine("Мой возраст: {0}", age);
+            for (int i = 0; i < favcolors.Length; i++)
+            {
+                favcolors[i] = ShowColor();
+            }
 
-            Console.Write("Введите имя: ");
-            name = Console.ReadLine();
-            Console.Write("Введите возрас с цифрами:");
-            age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Мои любимые цвета:");
+            foreach(var fav in favcolors)
+            { 
+                Console.WriteLine(fav);
+            }
 
-            Console.WriteLine("Ваше имя: {0}", name);
-            Console.WriteLine("Ваш возраст: {0}", age);
-
-            ShowColor();
+            Console.ReadKey();
         }
     }
 }
