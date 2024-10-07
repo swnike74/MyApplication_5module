@@ -1,10 +1,10 @@
 ﻿namespace MyApplication_5module
-{//Задание 5.2.2
+{//Задание 5.2.3
     internal class Program
     {
         static string ShowColor(string username)
         {
-            Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
+            Console.WriteLine("{0},Напишите свой любимый цвет на английском с маленькой буквы",username);
             var color = Console.ReadLine();
 
             switch (color)
