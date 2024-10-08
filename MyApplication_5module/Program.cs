@@ -1,10 +1,10 @@
 ﻿namespace MyApplication_5module
-{//Задание 5.2.3
+{//Задание 5.2.7
     internal class Program
     {
-        static string ShowColor(string username)
+        static string ShowColor(string username, int userage)
         {
-            Console.WriteLine("{0},Напишите свой любимый цвет на английском с маленькой буквы",username);
+            Console.WriteLine("{0},{1} лет,\nНапишите свой любимый цвет на английском с маленькой буквы",username, userage);
             var color = Console.ReadLine();
 
             switch (color)
@@ -88,7 +88,7 @@
             var favcolors = new string[3];
             for(int i = 0;i < favcolors.Length;i++)
             {
-                favcolors[i] = ShowColor(name);
+                favcolors[i] = ShowColor(name,age);
             }
 
             Console.WriteLine("Ваши любимые цвета;");
