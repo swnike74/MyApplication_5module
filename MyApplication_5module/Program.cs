@@ -1,6 +1,5 @@
 ﻿namespace MyApplication_5module
-{//Задание 5.2.14 - Модифицируйте метод GetArrayFromConsole так,
- //чтобы размерность массива указывалась в качестве необязательного параметра num.
+{//Задание 5.2.17 -
     internal class Program
     {
         static string ShowColor(string username, int userage)
@@ -65,15 +64,30 @@
                     }    
                 }
             }
-
             return result;
+        }
+
+        static void ShowArray(int[] array, bool IsSort = false)
+        {
+            var temp = array;
+            if(IsSort)
+            {
+                temp = SortArray(array);
+            }
+
+            foreach (var item in temp)
+            {
+                Console.WriteLine(item);
+            }
+   
+
         }
 
         static void Main(string[] args)
         {
             var array = GetArrayFromConsole();
             var sortedarray = SortArray(array);
-
+            ShowArray(array, false);
 
             /*var (name, age) = ("Евгения", 27);
 
