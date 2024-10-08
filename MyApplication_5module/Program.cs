@@ -47,7 +47,10 @@
                 Console.WriteLine("Введите элемент массива номер {0}", i + 1);
                 result[i] = int.Parse(Console.ReadLine());
             }
-
+            return result;
+        }
+        static int[] SortResult(int[] result) 
+        {
             int temp = 0;
             for (int i = 0; i < result.Length; i++)
             {
@@ -60,11 +63,6 @@
                         result[j] = temp;
                     }    
                 }
-            }
-
-            for (int i = 0; i < result.Length; i++)
-            {
-                Console.WriteLine(result[i]);
             }
 
             return result;
