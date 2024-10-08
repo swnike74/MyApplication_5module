@@ -1,5 +1,6 @@
 ﻿namespace MyApplication_5module
-{//Задание 5.2.7
+{//Задание 5.2.14 - Модифицируйте метод GetArrayFromConsole так,
+ //чтобы размерность массива указывалась в качестве необязательного параметра num.
     internal class Program
     {
         static string ShowColor(string username, int userage)
@@ -38,9 +39,9 @@
             return color;
         }
 
-        static int[] GetArrayFromConsole()
+        static int[] GetArrayFromConsole(int num = 5)
         {
-            var result = new int[5];
+            var result = new int[num];
 
             for (int i = 0; i < result.Length; i++)
             {
