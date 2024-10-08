@@ -1,5 +1,5 @@
 ﻿namespace MyApplication_5module
-{//Задание 5.2.17 -
+{//Задание 5.2.18 -
     internal class Program
     {
         static string ShowColor(string username, int userage)
@@ -85,9 +85,9 @@
 
         static void Main(string[] args)
         {
-            var array = GetArrayFromConsole();
+            var array = GetArrayFromConsole(10);
             var sortedarray = SortArray(array);
-            ShowArray(array, false);
+            ShowArray(array, true);
 
             /*var (name, age) = ("Евгения", 27);
 
