@@ -50,7 +50,7 @@
             }
             return result;
         }
-        static int[] SortResult(int[] result) 
+        static int[] SortArray(int[] result) 
         {
             int temp = 0;
             for (int i = 0; i < result.Length; i++)
@@ -71,7 +71,11 @@
 
         static void Main(string[] args)
         {
-            var (name, age) = ("Евгения", 27);
+            var array = GetArrayFromConsole();
+            var sortedarray = SortArray(array);
+
+
+            /*var (name, age) = ("Евгения", 27);
 
             Console.WriteLine("Моё имя: {0}", name);
             Console.WriteLine("Мой возраст: {0}", age);
@@ -94,7 +98,7 @@
             foreach (var color in favcolors)
             {
                 Console.WriteLine(color);
-            }
+            }*/
             Console.ReadKey();
         }
     }
