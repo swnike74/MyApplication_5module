@@ -1,5 +1,5 @@
 ﻿namespace MyApplication_5module
-{//Задание 5.2.18 -
+{//Задание 5.3.3 - added GetName()
     internal class Program
     {
         static string ShowColor(string username, int userage)
@@ -79,15 +79,26 @@
             {
                 Console.WriteLine(item);
             }
-   
+        }
 
+        static void GetName(ref string name)
+        {
+            Console.WriteLine("Введите имя");
+            name = Console.ReadLine();
         }
 
         static void Main(string[] args)
         {
-            var array = GetArrayFromConsole(10);
-            var sortedarray = SortArray(array);
-            ShowArray(array, true);
+            var (name, age) = ("Евгения", 27);
+
+            Console.WriteLine("name{0}", name);
+            GetName(ref name);
+            Console.WriteLine("name after \n{0}", name);
+
+
+            //var array = GetArrayFromConsole(10);
+            //var sortedarray = SortArray(array);
+            //ShowArray(array, true);
 
             /*var (name, age) = ("Евгения", 27);
 
