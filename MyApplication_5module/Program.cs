@@ -1,5 +1,5 @@
 ﻿namespace MyApplication_5module
-{//Задание 5.3.3 - added GetName()
+{//Задание 5.3.6 - operator in
     internal class Program
     {
         static string ShowColor(string username, int userage)
@@ -87,9 +87,20 @@
             name = Console.ReadLine();
         }
 
+        static void BigDataOperation(in int[] arr)
+        {
+            arr[0] = 4;
+        }
+
         static void Main(string[] args)
         {
             var (name, age) = ("Евгения", 27);
+
+            var arr = new int[] { 1, 2, 3 };
+            BigDataOperation(arr);
+            Console.WriteLine(arr[0]);
+
+
 
             Console.WriteLine("name{0}", name);
             GetName(ref name);
