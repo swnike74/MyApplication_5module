@@ -1,5 +1,5 @@
 ﻿namespace MyApplication_5module
-{//Задание 5.3.13 - added SortArrayasc, SortArraydesc
+{//Задание 5.5.3 - recursive function
     internal class Program
     {
         static string ShowColor(string username, int userage)
@@ -129,8 +129,42 @@
             arr[0] = 4;
         }
 
+
+        static void Echo(string saidworld, int deep)
+        {
+            var modif = saidworld;
+
+            if (modif.Length > 2)
+            {
+                modif = modif.Remove(0, 2);
+            }
+            Console.WriteLine("..." + modif);
+
+            if (deep > 1)
+            {
+                Echo(modif, deep - 1);
+            }
+        }
+
         static void Main(string[] args)
         {
+
+            Console.WriteLine("Напишите что-то");
+            var str = Console.ReadLine();
+
+            Console.WriteLine("Укажите глубину эха");
+            var deep = int.Parse(Console.ReadLine());
+
+
+            /*if (modif.Length > 2)
+            {
+                modif = modif.Remove(0, 2);
+            }*/
+
+            Echo(str, deep);
+
+
+
             /*var (name, age) = ("Евгения", 27);
 
             var arr = new int[] { 1, 2, 3 };
@@ -142,7 +176,7 @@
             Console.WriteLine("name after \n{0}", name);*/
 
 
-            int number = 7;
+            /*int number = 7;
             var array = GetArrayFromConsole(ref number);
 
             int[] arrayasc = new int[number];
@@ -151,7 +185,7 @@
             SortArray(in array,out arrayasc, out arraydesc);
             ShowArray(array, false);
             ShowArray(arrayasc, false);
-            ShowArray(arraydesc, false);
+            ShowArray(arraydesc, false);*/
 
             /*var (name, age) = ("Евгения", 27);
 
