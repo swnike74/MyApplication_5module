@@ -1,5 +1,5 @@
 ﻿namespace MyApplication_5module
-{//Задание 5.3.6 - operator in
+{//Задание 5.3.13 - added SortArrayasc, SortArraydesc
     internal class Program
     {
         static string ShowColor(string username, int userage)
@@ -38,7 +38,7 @@
             return color;
         }
 
-        static int[] GetArrayFromConsole(int num = 5)
+        static int[] GetArrayFromConsole(ref int num)
         {
             var result = new int[num];
 
@@ -49,9 +49,22 @@
             }
             return result;
         }
-        static int[] SortArray(int[] result) 
+
+        static void SortArray(in int[] array, out int[] sortarrayasc, out int[] sortarraydesc)
+        {
+            sortarrayasc = SortArrayasc(array);
+            sortarraydesc = SortArraydesc(array);
+
+        }
+        static int[] SortArrayasc(int[] inarray) 
         {
             int temp = 0;
+            int[] result = new int[inarray.Length];
+            for(int i=0; i < inarray.Length; i++)
+            {
+                result[i] = inarray[i];
+            }
+
             for (int i = 0; i < result.Length; i++)
             {
                 for (int j = i + 1; j < result.Length; j++)
@@ -67,18 +80,42 @@
             return result;
         }
 
+        static int[] SortArraydesc(int[] inarray)
+        {
+            int temp = 0;
+            int[] result = new int[inarray.Length];
+            for (int i = 0; i < inarray.Length; i++)
+            {
+                result[i] = inarray[i];
+            }
+            for (int i = 0; i < result.Length; i++)
+            {
+                for (int j = i + 1; j < result.Length; j++)
+                {
+                    if (result[i] < result[j])
+                    {
+                        temp = result[i];
+                        result[i] = result[j];
+                        result[j] = temp;
+                    }
+                }
+            }
+            return result;
+        }
+
         static void ShowArray(int[] array, bool IsSort = false)
         {
             var temp = array;
             if(IsSort)
             {
-                temp = SortArray(array);
+                //temp = SortArray(array);
             }
 
             foreach (var item in temp)
             {
                 Console.WriteLine(item);
             }
+            Console.WriteLine("\n");
         }
 
         static void GetName(ref string name)
@@ -94,22 +131,27 @@
 
         static void Main(string[] args)
         {
-            var (name, age) = ("Евгения", 27);
+            /*var (name, age) = ("Евгения", 27);
 
             var arr = new int[] { 1, 2, 3 };
             BigDataOperation(arr);
             Console.WriteLine(arr[0]);
 
-
-
             Console.WriteLine("name{0}", name);
             GetName(ref name);
-            Console.WriteLine("name after \n{0}", name);
+            Console.WriteLine("name after \n{0}", name);*/
 
 
-            //var array = GetArrayFromConsole(10);
-            //var sortedarray = SortArray(array);
-            //ShowArray(array, true);
+            int number = 7;
+            var array = GetArrayFromConsole(ref number);
+
+            int[] arrayasc = new int[number];
+            int[] arraydesc = new int[number];
+             
+            SortArray(in array,out arrayasc, out arraydesc);
+            ShowArray(array, false);
+            ShowArray(arrayasc, false);
+            ShowArray(arraydesc, false);
 
             /*var (name, age) = ("Евгения", 27);
 
