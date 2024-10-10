@@ -1,5 +1,5 @@
 ﻿namespace MyApplication_5module
-{//Задание 5.5.3 - recursive function
+{//Задание 5.5.3 - recursive function with background color
     internal class Program
     {
         static string ShowColor(string username, int userage)
@@ -138,6 +138,9 @@
             {
                 modif = modif.Remove(0, 2);
             }
+
+            Console.BackgroundColor = (ConsoleColor)deep;
+
             Console.WriteLine("..." + modif);
 
             if (deep > 1)
@@ -156,10 +159,7 @@
             var deep = int.Parse(Console.ReadLine());
 
 
-            /*if (modif.Length > 2)
-            {
-                modif = modif.Remove(0, 2);
-            }*/
+            
 
             Echo(str, deep);
 
