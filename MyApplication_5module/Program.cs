@@ -1,5 +1,5 @@
 ﻿namespace MyApplication_5module
-{//Задание 5.5.3 - recursive function with background color
+{//Задание 5.5.4 - recursive function with background color
     internal class Program
     {
         static string ShowColor(string username, int userage)
