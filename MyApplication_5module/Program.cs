@@ -1,5 +1,7 @@
-﻿namespace MyApplication_5module
-{//Задание 5.5.4 - recursive function with background color
+﻿using System.Xml.Linq;
+
+namespace MyApplication_5module
+{//Задание 5.5.5 - recursive function - factorial
     internal class Program
     {
         static string ShowColor(string username, int userage)
@@ -149,19 +151,32 @@
             }
         }
 
+        static int Factorial(int x)
+        {
+            if (x == 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return x * Factorial(x - 1);
+            }
+        }
+
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Напишите что-то");
+            Console.WriteLine("Factorial(20)={0}", Factorial(20));
+
+
+
+
+            /*Console.WriteLine("Напишите что-то");
             var str = Console.ReadLine();
 
             Console.WriteLine("Укажите глубину эха");
             var deep = int.Parse(Console.ReadLine());
-
-
-            
-
-            Echo(str, deep);
+            Echo(str, deep);*/
 
 
 
