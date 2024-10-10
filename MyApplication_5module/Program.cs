@@ -1,7 +1,7 @@
 ﻿using System.Xml.Linq;
 
 namespace MyApplication_5module
-{//Задание 5.5.5 - recursive function - factorial
+{//Задание 5.5.8 - recursive function - PowerUp(N,pow)
     internal class Program
     {
         static string ShowColor(string username, int userage)
@@ -163,11 +163,34 @@ namespace MyApplication_5module
             }
         }
 
+        private static int PowerUp(int N, byte pow)
+        {
+            if (pow == 0)
+            {
+                return 1;
+            }
+            else
+            {
+
+                if (pow == 1)
+                {
+                    return N;
+
+                }
+                else
+                {
+                    return N * PowerUp(N, --pow);
+
+                }
+            }
+            
+        }
+
         static void Main(string[] args)
         {
 
             Console.WriteLine("Factorial(20)={0}", Factorial(20));
-
+            Console.WriteLine("5^3 = {0}", PowerUp(5, 3));
 
 
 
